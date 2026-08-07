@@ -3,16 +3,17 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-        {
-        "label": "build",
-        "group": "build",
-        "type": "shell",
-        "command": "scons",
-        "args": [
-            // enable for debugging with breakpoints
-            "dev_build=yes",
-        ],
-        "problemMatcher": "$msCompile"
-        }
+		{
+			"type": "dotnet",
+			"task": "build",
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "build"
+		}
     ]
 }

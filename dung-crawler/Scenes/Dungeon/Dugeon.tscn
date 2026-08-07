@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" uid="uid://djnqkn8ybqpxm" path="res://Scenes/Dungeon/Dugeon.cs" id="1_d436j"]
 
-[node name="Dungeon" type="Node3D" unique_id=2097077654]
+[node name="Dungeon" type="Node3D" unique_id=2097077654 node_paths=PackedStringArray("GridMap")]
 script = ExtResource("1_d436j")
+GridMap = NodePath("GridMap")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1815124558]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1870909063]
+transform = Transform3D(1, 0, 0, 0, 0.76860744, 0.6397207, 0, -0.6397207, 0.76860744, -1.5861053, 48.41319, -197.75299)
