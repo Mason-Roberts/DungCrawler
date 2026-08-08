@@ -51,8 +51,8 @@
 		"7": {
 			"gridMapIndex": 7,
 			"weight": 1,
-			"allowedRotations": [0, 90],
-			"sockets": ["T", "W", "T", "W"]
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "E", "G", "E"]
 		},
 		"8": {
 			"gridMapIndex": 8,
@@ -63,8 +63,8 @@
 		"9": {
 			"gridMapIndex": 9,
 			"weight": 1,
-			"allowedRotations": [0, 90, 180, 270],
-			"sockets": ["E", "E", "G", "E"]
+			"allowedRotations": [0, 90],
+			"sockets": ["T", "W", "T", "W"]
 		}
 	},
 	"allowedSockets": {

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w4307876yvfm"]
 
 [ext_resource type="Script" uid="uid://djnqkn8ybqpxm" path="res://Scenes/Dungeon/Dungeon.cs" id="1_nb5j8"]
-[ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="2_1paed"]
+[ext_resource type="MeshLibrary" uid="uid://c8ffvrudesgtb" path="res://assets/libraries/tileset_dungeon_full.tres" id="2_1paed"]
 [ext_resource type="Script" uid="uid://ddtuo4f0v4fvg" path="res://Scenes/Dungeon/DebugCamera.cs" id="3_1paed"]
 
 [sub_resource type="Environment" id="Environment_khfq4"]

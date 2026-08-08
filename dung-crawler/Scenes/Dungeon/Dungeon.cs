@@ -35,7 +35,7 @@ public partial class Dungeon : Node3D
 
 		_constraints = JsonSerializer.Deserialize<Constraints>(file.GetAsText());
 
-		WfcGenerator wfc = new WfcGenerator(GridMap, MapSize, _constraints, 9, -1);
+		WfcGenerator wfc = new WfcGenerator(GridMap, MapSize, _constraints, 7, -1);
 		wfc.Generate();
 	}
 }
@@ -62,7 +62,7 @@ public class WfcGenerator
 		_gateTileId = gateTileId;
 		_totalCells = _size * _size;
 		_collapsedCells = 0;
-		_rand = new Random();
+		_rand = new Random(Guid.NewGuid().GetHashCode());
 	}
 
 	private void InitializeMapData()
@@ -90,7 +90,8 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles
+						AvailableTiles = tiles,
+						Collapsed = 0
 					};
 					_grid[x,z] = cell;
 				}
@@ -100,7 +101,8 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles
+						AvailableTiles = tiles,
+						Collapsed = 0
 					};
 					_grid[x,z] = cell;
 				}
@@ -110,7 +112,8 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles
+						AvailableTiles = tiles,
+						Collapsed = 0
 					};
 					_grid[x,z] = cell;
 				}
@@ -118,13 +121,13 @@ public class WfcGenerator
 		}
 	}
 
-	private void CollapseCell()
+	private void CollapseCell(DungeonCell cell = null)
 	{
 		// initial cell should always be the gate from a random part of the border
-		if (_collapsedCells == 0)
+		if (_collapsedCells == 0 && cell == null)
 		{
-			bool useX = _rand.Next(0, 1) == 1;
-			bool useZero = _rand.Next(0, 1) == 1;
+			bool useX = _rand.Next(0, 2) == 1;
+			bool useZero = _rand.Next(0, 2) == 1;
 
 			int coord = _rand.Next(1, _size - 2); 
 			int side = useZero ? 0 : _size - 1;
@@ -132,14 +135,36 @@ public class WfcGenerator
 			if (useX)
 			{
 				_grid[coord, side].Collapsed = _gateTileId;
-				_grid[coord, side].Orientation = side == _size - 1 ? 270 : 90;
+				_grid[coord, side].Orientation = side == _size - 1 ? 90 : 270;
+				_grid[coord, side].AvailableTiles = new List<int> { _gateTileId };
+				_collapsedCells = _collapsedCells + 1;
 			}
 			else
 			{
 				_grid[side, coord].Collapsed = _gateTileId;
 				_grid[side, coord].Orientation = side == _size - 1 ? 180 : 0;
+				_grid[coord, side].AvailableTiles = new List<int> { _gateTileId };
+				_collapsedCells = _collapsedCells + 1;
 			}
+		}
+		else
+		{
+			
+		}
 
+	}
+
+	private void RenderGrid()
+	{
+		for (int x = 0; x < _size; x++)
+		{
+			for (int z = 0; z < _size; z++)
+			{
+				if (_grid[x, z].Collapsed.HasValue)
+				{		
+					_gridMap.SetCellItem(new Vector3I(x, 0, z), _grid[x, z].Collapsed.Value, TranslateDegreeToOrthagonalIndex(_grid[x, z].Orientation));
+				}
+			}
 		}
 	}
 
@@ -149,8 +174,132 @@ public class WfcGenerator
 		
 		while (_collapsedCells < _totalCells)
 		{
-			CollapseCell();
+			if (_collapsedCells != 0)
+			{				
+				var candidates = GetLowestEntropyCells();
+
+				if (candidates == null || candidates.Count() == 0)
+				{
+					// Contradiction - restart
+					GD.Print($"WFC contradiction restarting...");
+					Generate();
+					return;
+				}
+
+				int randCandidate = _rand.Next(0, candidates.Count());
+				CollapseCell(candidates[randCandidate]);		
+				// Propogate();
+			}
+			else
+			{
+				CollapseCell();		
+				// Propogate();
+			}
+
+			break;
 		}
+
+		RenderGrid();
+	}
+
+	private int TranslateDegreeToOrthagonalIndex(int degree)
+	{
+		switch (degree)
+		{
+			case 0:
+				return 0;
+			case 90:
+				return 16;
+			case 180:
+				return 10;
+			case 270:
+				return 22;
+			default:
+				return 0;
+		}
+	}
+
+	private List<DungeonCell> GetLowestEntropyCells()
+	{
+		List<DungeonCell> candidates = new List<DungeonCell>();
+		int currentMin = int.MaxValue;
+		for (int x = 0; x < _size; x++)
+		{
+			for (int z = 0; z < _size; z++)
+			{
+				if (_grid[x, z].Collapsed.HasValue)
+				{
+					continue;
+				}
+
+				if (_grid[x, z].Entropy <= 0)
+				{
+					return null;
+				}
+
+				if (_grid[x, z].Entropy < currentMin)
+				{
+					currentMin = _grid[x, z].Entropy;
+					candidates.Clear();
+					candidates.Add(_grid[x, z]);
+				}
+				else if (_grid[x, z].Entropy == currentMin)
+				{
+					candidates.Add(_grid[x, z]);
+				}
+			}
+		}
+
+		return candidates;
+	}
+
+	// private void Propagate()
+	// {
+	// 	Queue<int[]> queue = new Queue<int[]>();
+
+	// 	// Add all cells to queue initially
+	// 	for (int x = 0; x < _size; x++)
+	// 	{
+	// 		for (int z = 0; z < _size; z++)
+	// 		{
+	// 			if (!_grid[x, z].Collapsed.HasValue)
+	// 			{
+	// 				queue.Enqueue(new int[] { x, z });
+	// 			}
+	// 		}
+	// 	}
+
+	// 	int[] dx = new int[] { 1, -1, 0, 0 };
+	// 	int[] dz = new int[] { 0, 0, 1, -1 };
+
+	// 	while (queue.Count > 0)
+	// 	{
+	// 		int[] cell = queue.Dequeue();
+	// 		int x = cell[0];
+	// 		int z = cell[1];
+
+	// 		for (int d = 0; d < 4; d++)
+	// 		{
+	// 			int nx = x + dx[d];
+	// 			int nz = z + dz[d];
+
+	// 			if (nx < 0 || nx >= _size || nz < 0 || nz >= _size) continue;
+	// 			if (_grid[x, z].Collapsed.HasValue) continue;
+
+	// 			bool changed = ApplyConstraints(x, z, d, nx, nz, queue);
+	// 			if (changed)
+	// 			{
+	// 				// Also constrain the reverse direction
+	// 				int reverseDir = (d + 2) % 4;
+	// 				ApplyConstraints(nx, nz, reverseDir, x, z, queue);
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	private void ApplyConstrants()
+	{
+		
 	}
 
 }
