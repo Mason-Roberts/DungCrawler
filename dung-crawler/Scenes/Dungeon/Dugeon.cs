@@ -27,8 +27,28 @@ public partial class Dugeon : Node3D
         {
             for (int z = 0; z < MapSize; z++)
             {
+				int orientation = 0;
                 // Set cell position (x, y, z) and tile ID
-                GridMap.SetCellItem(new Vector3I(x, 0, z), 1);
+				if ((z == 0 && x == 0) || (z == MapSize - 1 && x == MapSize - 1))
+				{		
+					orientation = ((z == MapSize - 1 && x == MapSize - 1) ? 10 : 0);
+                	GridMap.SetCellItem(new Vector3I(x, 0, z), 2, orientation);
+				}
+				else if ((z == 0 && x == MapSize - 1) || (z == MapSize - 1 && x == 0))
+				{		
+					orientation = ((z == 0 && x == MapSize - 1) ? 22 : 16);
+                	GridMap.SetCellItem(new Vector3I(x, 0, z), 2, orientation);
+				}
+				else if (z == 0 || x == 0)
+				{
+					orientation = (z == 0 ? 22 : 0);
+                	GridMap.SetCellItem(new Vector3I(x, 0, z), 1, orientation);				
+				}
+				else
+				{	
+                	GridMap.SetCellItem(new Vector3I(x, 0, z), orientation);
+				}
+
             }
         }
 

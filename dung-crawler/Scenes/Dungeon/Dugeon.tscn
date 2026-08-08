@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://w4307876yvfm"]
 
 [ext_resource type="Script" uid="uid://djnqkn8ybqpxm" path="res://Scenes/Dungeon/Dugeon.cs" id="1_d436j"]
-[ext_resource type="MeshLibrary" uid="uid://6ojlqls5ekdy" path="res://assets/libraries/tileset_base_library.tres" id="2_sdk08"]
+[ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="2_sdk08"]
 
 [sub_resource type="Environment" id="Environment_khfq4"]
 background_mode = 1
@@ -24,10 +24,10 @@ camera_attributes = SubResource("CameraAttributesPractical_q780v")
 mesh_library = ExtResource("2_sdk08")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=233400814]
-transform = Transform3D(-0.0201165, 0.9952097, -0.09567147, 0.013518559, 0.09595284, 0.9952941, 0.99970627, 0.018728493, -0.015384036, 28.849, 50, 26.75)
+transform = Transform3D(-0.023498615, 0.90443754, -0.42595837, 0.005936343, 0.42619473, 0.904612, 0.99970627, 0.018728493, -0.015384037, 0, 48.39, 35.239)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1582369857]
-transform = Transform3D(0.9992925, 0.003100257, -0.037482448, 0.03761044, -0.08237238, 0.9958917, 1.7314543e-09, -0.9965968, -0.082430705, 29.211, 55, 26.543)
-light_energy = 4.178
+transform = Transform3D(0.9335875, -0.10113014, -0.3437833, 0.31846726, -0.20569503, 0.92534745, -0.16429503, -0.97337663, -0.15982765, 29.211, 55, 26.543)
+light_energy = 0.534
 shadow_enabled = true
 sky_mode = 1
