@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Dugeon : Node3D
+public partial class Dungeon : Node3D
 {
 	[Export]
 	public GridMap GridMap { get; set; }
