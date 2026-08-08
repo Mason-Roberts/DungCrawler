@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://du6oukt0s413h"]
+
+[ext_resource type="MeshLibrary" uid="uid://c8ffvrudesgtb" path="res://assets/libraries/tileset_dungeon_full.tres" id="1_371u8"]
+[ext_resource type="PackedScene" uid="uid://br7hpys7tp4lg" path="res://Scenes/Player/Player.tscn" id="2_c5gc8"]
+
+[node name="TestDungeon2" type="Node3D" unique_id=1228657258]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1420452371]
+mesh_library = ExtResource("1_371u8")
+data = {
+"cells": PackedInt32Array(65535, 65535, 1, 0, 65535, 0, 0, 0, 0, 65535, 0, 0, 65535, 65534, 2, 0, 65534, 1441793, 1, 65534, 1441794, 2, 65535, 1441794, 1, 65535, 1441792, 1, 0, 1441792, 2, 0, 655366, 3, 0, 1048585, 4, 0, 1441800, 4, 1, 655369, 4, 2, 655368, 3, 2, 1048585, 2, 1, 655361, 0, 1, 655365, 1, 1, 655360, 2, 2, 655366, 1, 2, 655360, 0, 2, 655360, 65535, 1, 655360, 65535, 2, 655360, 1, 3, 1048583, 2, 3, 2, 0, 3, 1048577, 65535, 3, 1048578, 65534, 2, 1048578, 65534, 1, 6, 65534, 0, 2)
+}
+
+[node name="Player" parent="." unique_id=1919564142 instance=ExtResource("2_c5gc8")]
+transform = Transform3D(-0.41719297, 0, -0.41719297, 0, 0.59, 0, 0.41719297, 0, -0.41719297, -1, 1, -2)
