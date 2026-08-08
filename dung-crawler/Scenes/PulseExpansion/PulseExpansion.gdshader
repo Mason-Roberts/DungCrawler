@@ -3,7 +3,7 @@ render_mode blend_mix, depth_draw_never, cull_disabled, unshaded;
 
 uniform vec4 shine_color : source_color = vec4(0.0, 1.0, 1.0, 1.0);
 uniform float intersection_thickness : hint_range(0.0, 2.0) = 0.5;
-uniform float sphere_opacity : hint_range(0.0, 1.0) = 0.1;
+uniform float sphere_opacity : hint_range(0.0, 1.0) = 0.0;
 
 uniform sampler2D depth_texture : hint_depth_texture, filter_linear_mipmap;
 

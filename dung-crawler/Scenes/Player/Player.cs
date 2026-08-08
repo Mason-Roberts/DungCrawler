@@ -8,14 +8,23 @@ public partial class Player : CharacterBody3D
 	[Export]
 	public float CamSensitivity = 0.002f;
 
+	[Signal]
+	public delegate void ExpansionEventHandler();
+
+	[Signal]
+	public delegate void MoveEventHandler();
+
 	private Node3D _head;
 	private Camera3D _cam;
 	private AnimatedSprite2D _hand;
+	private bool _lock = false;
 
 	public override void _Ready() {
 		_head = GetNode<Node3D>("Head");
 		_cam = GetNode<Camera3D>("Head/Camera3D");
 		_hand = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
+		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
 	public override void _Input(InputEvent @event) {
@@ -33,6 +42,19 @@ public partial class Player : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_hand.Frame == 4)
+		{
+			if (!_lock)
+			{
+				_lock = true;
+				EmitSignal("Expansion");
+			}
+		}
+		else
+		{
+			_lock = false;
+		}
+
 		Vector3 velocity = Velocity;
 
 		// Add the gravity.
@@ -55,6 +77,8 @@ public partial class Player : CharacterBody3D
 		{
 			velocity.X = direction.X * Speed;
 			velocity.Z = direction.Z * Speed;
+
+			EmitSignal("Move");
 		}
 		else
 		{
