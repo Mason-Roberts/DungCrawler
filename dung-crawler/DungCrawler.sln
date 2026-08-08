@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungCrawler", "DungCrawler.csproj", "{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungCrawler", "DungCrawler.csproj", "{68F6E20F-BFB2-4269-9BCB-6162F79B449C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{3C3919AA-03AD-43CE-97CE-B1F27B8202DD}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{68F6E20F-BFB2-4269-9BCB-6162F79B449C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
