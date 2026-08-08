@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="1_4t1dp"]
 [ext_resource type="PackedScene" uid="uid://br7hpys7tp4lg" path="res://Scenes/Player/Player.tscn" id="2_kyhjk"]
+[ext_resource type="PackedScene" uid="uid://bm8cgowkfxjv0" path="res://assets/audio/background/BackgroundAudio.tscn" id="3_p855g"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1bo0"]
 
@@ -44,3 +45,5 @@ shape = SubResource("BoxShape3D_k5igi")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1274048704]
 environment = SubResource("Environment_gwg83")
 camera_attributes = SubResource("CameraAttributesPractical_e1bo0")
+
+[node name="BackgroundAudio" parent="." unique_id=279095970 instance=ExtResource("3_p855g")]
