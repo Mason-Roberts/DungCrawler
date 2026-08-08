@@ -1,11 +1,48 @@
 [gd_scene format=3 uid="uid://ddt7aj1q2srst"]
 
 [ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="1_4t1dp"]
+[ext_resource type="Script" uid="uid://dh128x6moqlma" path="res://Scenes/Test/TestDungeon.cs" id="1_p855g"]
+[ext_resource type="PackedScene" uid="uid://br7hpys7tp4lg" path="res://Scenes/Player/Player.tscn" id="2_kyhjk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1bo0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5igi"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y6m7e"]
+
+[sub_resource type="Sky" id="Sky_p855g"]
+sky_material = SubResource("PanoramaSkyMaterial_y6m7e")
+
+[sub_resource type="Environment" id="Environment_gwg83"]
+background_mode = 1
+background_color = Color(0.5529556, 0.5529555, 0.5529556, 1)
+sky = SubResource("Sky_p855g")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e1bo0"]
 
 [node name="TestDungeon" type="Node3D" unique_id=322653469]
+script = ExtResource("1_p855g")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=351315609]
 mesh_library = ExtResource("1_4t1dp")
 data = {
 "cells": PackedInt32Array(0, 0, 655361, 0, 65535, 655361, 65535, 65535, 1, 65535, 0, 1, 1, 1, 1441793, 65534, 1, 1441793, 2, 1, 1441794, 2, 4, 655362, 65533, 1, 2, 1, 4, 1048577, 0, 4, 1048577, 65535, 4, 1048578, 65533, 2, 1, 0, 1, 0, 0, 2, 0, 1, 2, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 2, 0, 65535, 2, 0, 65535, 1, 0, 1, 65534, 1048577, 1, 65533, 1441793, 65534, 65533, 1441793, 65534, 65534, 1048577, 65533, 65534, 1048577, 65533, 65533, 1441793, 2, 65534, 1048577, 2, 65533, 1441793, 0, 65533, 1441793, 65535, 65533, 1441793, 65535, 65534, 1441792, 0, 65534, 1441792, 65532, 4, 655363, 65533, 4, 655362, 65534, 3, 1441796, 65533, 3, 1, 65531, 4, 1048578, 65531, 3, 1048579, 65531, 2, 1048579, 65531, 1, 1048579, 65531, 0, 1048579, 65532, 65535, 655362, 65532, 65532, 1441794, 65530, 65535, 1048578, 65529, 65534, 1048578, 65529, 65533, 2, 65530, 65532, 2, 65531, 65532, 1441793, 65532, 65534, 1441792, 65531, 65534, 1441792, 65531, 65535, 1441792, 65530, 65534, 1441792, 65530, 65533, 1441792, 65531, 65533, 1441792, 65532, 65533, 1441792, 3, 3, 1048577, 3, 2, 1441793, 5, 1, 655361, 5, 0, 655361, 5, 65535, 655361, 4, 1, 1, 4, 0, 1, 4, 65535, 1, 3, 65534, 1048577, 3, 65533, 1441793, 4, 65533, 1441793, 5, 65534, 655361, 5, 65533, 1441794, 4, 65534, 1441792, 4, 2, 1441792, 4, 3, 1048577, 5, 2, 655361, 5, 3, 655362, 2, 3, 655360, 2, 2, 655360)
 }
+
+[node name="Player" parent="." unique_id=1919564142 instance=ExtResource("2_kyhjk")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.4268961, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1016718578]
+physics_material_override = SubResource("PhysicsMaterial_e1bo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1274246192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7792015, 0)
+shape = SubResource("BoxShape3D_k5igi")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1274048704]
+environment = SubResource("Environment_gwg83")
+camera_attributes = SubResource("CameraAttributesPractical_e1bo0")
