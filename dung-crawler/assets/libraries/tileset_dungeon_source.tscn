@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bvjqvpto1d08g"]
+
+[ext_resource type="PackedScene" uid="uid://c2505ff5bkfyt" path="res://assets/models/tileset_dungeon/0W.glb" id="1_bipoy"]
+[ext_resource type="PackedScene" uid="uid://ldaqb1se6pqv" path="res://assets/models/tileset_dungeon/1W.glb" id="2_pyui6"]
+[ext_resource type="PackedScene" uid="uid://dr6uo0smucfb5" path="res://assets/models/tileset_dungeon/2W.glb" id="3_k2o63"]
+[ext_resource type="PackedScene" uid="uid://bf6b1kspe4jer" path="res://assets/models/tileset_dungeon/2WS.glb" id="4_1480t"]
+[ext_resource type="PackedScene" uid="uid://c6bff1b7lonwb" path="res://assets/models/tileset_dungeon/3W.glb" id="5_j5cg8"]
+[ext_resource type="PackedScene" uid="uid://t5ewufyn8ylm" path="res://assets/models/tileset_dungeon/4W.glb" id="6_1mkj8"]
+
+[node name="TilesetDungeonSource" type="Node3D" unique_id=1903029446]
+
+[node name="0W2" parent="." unique_id=1061991425 instance=ExtResource("1_bipoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="1W2" parent="." unique_id=1936714278 instance=ExtResource("2_pyui6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="2W2" parent="." unique_id=1468285739 instance=ExtResource("3_k2o63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="2WS2" parent="." unique_id=922621808 instance=ExtResource("4_1480t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[node name="3W2" parent="." unique_id=905745714 instance=ExtResource("5_j5cg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
+
+[node name="4W2" parent="." unique_id=1486600289 instance=ExtResource("6_1mkj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11)
