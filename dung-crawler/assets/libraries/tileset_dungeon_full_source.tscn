@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dpo3q5vnhtnml"]
+
+[ext_resource type="PackedScene" uid="uid://byqrimgjfgbf" path="res://assets/models/tileset_dungeon_full/0W.glb" id="1_uur71"]
+[ext_resource type="PackedScene" uid="uid://dtun2rlhi27gq" path="res://assets/models/tileset_dungeon_full/1W.glb" id="2_v3pe1"]
+[ext_resource type="PackedScene" uid="uid://b8yitn7t5e777" path="res://assets/models/tileset_dungeon_full/2W.glb" id="3_fxsvs"]
+[ext_resource type="PackedScene" uid="uid://boiwv0r7vho7b" path="res://assets/models/tileset_dungeon_full/2WS.glb" id="4_p384d"]
+[ext_resource type="PackedScene" uid="uid://chufsirw8xj62" path="res://assets/models/tileset_dungeon_full/3W.glb" id="5_2w6pq"]
+[ext_resource type="PackedScene" uid="uid://dbcm03c22u032" path="res://assets/models/tileset_dungeon_full/4W.glb" id="6_a0t7q"]
+[ext_resource type="PackedScene" uid="uid://cy2fj6rgnc7bv" path="res://assets/models/tileset_dungeon_full/D.glb" id="7_81n7h"]
+[ext_resource type="PackedScene" uid="uid://b5xv7kcb065xs" path="res://assets/models/tileset_dungeon_full/G.glb" id="8_itgwg"]
+[ext_resource type="PackedScene" uid="uid://pai27dee46ra" path="res://assets/models/tileset_dungeon_full/TC.glb" id="9_xmy24"]
+[ext_resource type="PackedScene" uid="uid://qnjn5pkpvs6t" path="res://assets/models/tileset_dungeon_full/TS.glb" id="10_ce7up"]
+
+[node name="TilesetDungeonFullSource" type="Node3D" unique_id=1890563326]
+
+[node name="0W" parent="." unique_id=1212559417 instance=ExtResource("1_uur71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="1W" parent="." unique_id=736692492 instance=ExtResource("2_v3pe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="2W" parent="." unique_id=47472732 instance=ExtResource("3_fxsvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="2WS" parent="." unique_id=1330358912 instance=ExtResource("4_p384d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[node name="3W" parent="." unique_id=1648892850 instance=ExtResource("5_2w6pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
+
+[node name="4W" parent="." unique_id=1991730952 instance=ExtResource("6_a0t7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11)
+
+[node name="D" parent="." unique_id=1268413372 instance=ExtResource("7_81n7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -13)
+
+[node name="G" parent="." unique_id=142961223 instance=ExtResource("8_itgwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -15)
+
+[node name="TC" parent="." unique_id=81464787 instance=ExtResource("9_xmy24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -17)
+
+[node name="TS" parent="." unique_id=860791731 instance=ExtResource("10_ce7up")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -19)
