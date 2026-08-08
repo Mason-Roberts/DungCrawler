@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djnqkn8ybqpxm" path="res://Scenes/Dungeon/Dungeon.cs" id="1_nb5j8"]
 [ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="2_1paed"]
+[ext_resource type="Script" uid="uid://ddtuo4f0v4fvg" path="res://Scenes/Dungeon/DebugCamera.cs" id="3_1paed"]
 
 [sub_resource type="Environment" id="Environment_khfq4"]
 background_mode = 1
@@ -11,6 +12,10 @@ ambient_light_color = Color(0.65012825, 0.6501283, 0.65012825, 1)
 ambient_light_energy = 4.23
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q780v"]
+
+[sub_resource type="Environment" id="Environment_1paed"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bs573"]
 
 [node name="Dungeon" type="Node3D" unique_id=2097077654 node_paths=PackedStringArray("GridMap")]
 script = ExtResource("1_nb5j8")
@@ -24,10 +29,14 @@ camera_attributes = SubResource("CameraAttributesPractical_q780v")
 mesh_library = ExtResource("2_1paed")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=233400814]
-transform = Transform3D(-0.023498615, 0.90443754, -0.42595837, 0.005936343, 0.42619473, 0.904612, 0.99970627, 0.018728493, -0.015384037, 0, 48.39, 35.239)
+transform = Transform3D(-0.09194204, 0.7000351, 0.70816493, -0.006047015, 0.71077156, -0.7033969, -0.9957461, -0.06895402, -0.061116666, -14.806793, 26.059723, 15)
+environment = SubResource("Environment_1paed")
+attributes = SubResource("CameraAttributesPractical_bs573")
+fov = 80.9
+script = ExtResource("3_1paed")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1582369857]
-transform = Transform3D(0.9335875, -0.10113014, -0.3437833, 0.31846726, -0.20569503, 0.92534745, -0.16429503, -0.97337663, -0.15982765, 29.211, 55, 26.543)
+transform = Transform3D(0.6407393, -0.5532538, 0.5323191, -0.43825012, 0.30572757, 0.84526193, -0.63038886, -0.7748814, -0.0465719, 15, 15, 15)
 light_energy = 0.534
 shadow_enabled = true
 sky_mode = 1
