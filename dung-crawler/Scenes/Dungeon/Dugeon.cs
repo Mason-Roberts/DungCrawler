@@ -56,165 +56,57 @@ public partial class Dugeon : Node3D
 		));
 
 		_tiles.Add(new DungeonTile(
+			gridMapIndex: 0,
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
+		));
+
+		_tiles.Add(new DungeonTile(
 			gridMapIndex: 1,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 30
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
 		));
 
 		_tiles.Add(new DungeonTile(
 			gridMapIndex: 2,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 10
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
 		));
 
 		_tiles.Add(new DungeonTile(
 			gridMapIndex: 3,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 10
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
 		));
 
 		_tiles.Add(new DungeonTile(
 			gridMapIndex: 4,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 10
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
 		));
 
 		_tiles.Add(new DungeonTile(
 			gridMapIndex: 5,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 4 },
-			weight: 10
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 6,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 5
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 7,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 4 },
-			weight: 5
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 8,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 5
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 9,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 4 },
-			weight: 5
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 10,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 8
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 11,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 4 },
-			weight: 8
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 12,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 4 },
-			weight: 6
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 13,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 4 },
-			weight: 4
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 14,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 4 },
-			weight: 4
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 15,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 4 },
-			weight: 4
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 16,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 4
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 17,
-			posXRules: new List<int> { 3 },
-			negXRules: new List<int> { 2 },
-			posZRules: new List<int> { 5 },
-			negZRules: new List<int> { 4 },
-			weight: 3
-		));
-
-		_tiles.Add(new DungeonTile(
-			gridMapIndex: 18,
-			posXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negXRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			posZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			negZRules: new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
-			weight: 20
+			posXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negXRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			posZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			negZRules: new List<int> { 0, 1, 2, 3, 4, 5 },
+			weight: 2
 		));
 
 		_tileSet = _tiles.Skip(1).ToList();
@@ -440,18 +332,8 @@ public partial class Dugeon : Node3D
 
 	private void GenerateDungeonMeshes()
 	{
-		if (GridMap == null)
-		{
-			GridMap = new GridMap();
-			AddChild(GridMap);
-		}
-
 		GridMap.Clear();
-
-		MeshLibrary meshLibrary = new MeshLibrary();
-		DefineGridMapMeshLibrary(meshLibrary);
-		GridMap.MeshLibrary = meshLibrary;
-		GridMap.CellSize = new Vector3(1, 2, 1);
+		GridMap.CellSize = new Vector3(1, 1, 1);
 		GridMap.CellCenterX = true;
 		GridMap.CellCenterY = true;
 		GridMap.CellCenterZ = true;
@@ -477,56 +359,6 @@ public partial class Dugeon : Node3D
 		}
 	}
 
-	private void DefineGridMapMeshLibrary(MeshLibrary meshLibrary)
-	{
-		StandardMaterial3D floorMaterial = new StandardMaterial3D
-		{
-			AlbedoColor = new Color(0f, 1f, 0.5f),
-			Metallic = 0.3f,
-			Roughness = 0.8f
-		};
-
-		StandardMaterial3D wallMaterial = new StandardMaterial3D
-		{
-			AlbedoColor = new Color(1f, 0f, 0f),
-			Metallic = 0.2f,
-			Roughness = 0.9f
-		};
-
-		StandardMaterial3D floorEdgeMaterial = new StandardMaterial3D
-		{
-			AlbedoColor = new Color(0f, 1f, 0f),
-			Metallic = 0.3f,
-			Roughness = 0.8f
-		};
-
-		StandardMaterial3D roomMaterial = new StandardMaterial3D
-		{
-			AlbedoColor = new Color(0f, 0f, 1f),
-			Metallic = 0.4f,
-			Roughness = 0.7f
-		};
-
-		AddMeshItem(meshLibrary, 0, "Floor", new BoxMesh { Size = Vector3.One }, floorMaterial);
-		AddMeshItem(meshLibrary, 1, "Wall+X", new BoxMesh { Size = new Vector3(0.5f, 2f, 1f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 2, "Wall-X", new BoxMesh { Size = new Vector3(0.5f, 2f, 1f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 3, "Wall+Z", new BoxMesh { Size = new Vector3(1f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 4, "Wall-Z", new BoxMesh { Size = new Vector3(1f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 5, "Corner+X+Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 6, "Corner+X-Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 7, "Corner-X+Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 8, "Corner-X-Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 9, "CorridorXX", new BoxMesh { Size = new Vector3(0.5f, 2f, 1f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 10, "CorridorZZ", new BoxMesh { Size = new Vector3(1f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 11, "RoomCenter", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 12, "TJunction+X", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 13, "TJunction-X", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 14, "TJunction+Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 15, "TJunction-Z", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 16, "Cross", new BoxMesh { Size = new Vector3(0.5f, 2f, 0.5f) }, wallMaterial);
-		AddMeshItem(meshLibrary, 17, "LargeRoom", new BoxMesh { Size = Vector3.One }, roomMaterial);
-	}
-
 	private void AddMeshItem(MeshLibrary meshLibrary, int id, string name, Mesh mesh, StandardMaterial3D material)
 	{
 		meshLibrary.CreateItem(id);
@@ -543,29 +375,33 @@ public partial class Dugeon : Node3D
 	}
 }
 
-public struct DungeonTile
+public partial class Cell: RefCounted
 {
+	public Cell(Vector3I pos, List<int> totalTiles)
+	{
+		Position = pos;
+		ValidNeighbors = totalTiles;
+	}
+
 	public int GridMapIndex { get; set; }
-	public List<int> PosXRules { get; set; }
-	public List<int> NegXRules { get; set; }
-	public List<int> PosZRules { get; set; }
-	public List<int> NegZRules { get; set; }
+	public Vector3I Position { get; set; }
+	public string PosX { get; set; }
+	public string NegX { get; set; }
+	public string PosZ { get; set; }
+	public string NegZ { get; set; }
 	public int Weight { get; set; }
 
-	public DungeonTile(
-		int gridMapIndex,
-		List<int> posXRules,
-		List<int> negXRules,
-		List<int> posZRules,
-		List<int> negZRules,
-		int weight = 1
-	)
+	public bool IsCollapsed { get; set; }
+
+	// List of grid map indeces that are still valid for this cell
+	public List<int> ValidNeighbors { get; set; }
+	
+	public int GetEntropy
 	{
-		GridMapIndex = gridMapIndex;
-		PosXRules = posXRules;
-		NegXRules = negXRules;
-		PosZRules = posZRules;
-		NegZRules = negZRules;
-		Weight = weight;
+		get
+		{
+			return ValidNeighbors.Count();
+		}
 	}
+
 }
