@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bphj0vh6jt47c"]
+
+[ext_resource type="Script" uid="uid://cuda6af6fesim" path="res://Scenes/PulseExpansion/PulseExpansion.cs" id="1_cv347"]
+[ext_resource type="Shader" uid="uid://b67dsmhssi0gc" path="res://Scenes/PulseExpansion/PulseExpansion.gdshader" id="1_jhq0n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_khfq4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q780v"]
+render_priority = 0
+shader = ExtResource("1_jhq0n")
+shader_parameter/shine_color = Color(0, 1, 1, 1)
+shader_parameter/intersection_thickness = 0.5
+shader_parameter/sphere_opacity = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_khfq4"]
+material = SubResource("ShaderMaterial_q780v")
+
+[node name="PulseExpansion" type="Area3D" unique_id=1502172526]
+script = ExtResource("1_cv347")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=254469045]
+shape = SubResource("SphereShape3D_khfq4")
+
+[node name="PulseMeshInstance" type="MeshInstance3D" parent="." unique_id=2026356046]
+mesh = SubResource("SphereMesh_khfq4")
