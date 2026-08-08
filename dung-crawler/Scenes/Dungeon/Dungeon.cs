@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -122,7 +123,23 @@ public class WfcGenerator
 		// initial cell should always be the gate from a random part of the border
 		if (_collapsedCells == 0)
 		{
-			
+			bool useX = _rand.Next(0, 1) == 1;
+			bool useZero = _rand.Next(0, 1) == 1;
+
+			int coord = _rand.Next(1, _size - 2); 
+			int side = useZero ? 0 : _size - 1;
+
+			if (useX)
+			{
+				_grid[coord, side].Collapsed = _gateTileId;
+				_grid[coord, side].Orientation = side == _size - 1 ? 270 : 90;
+			}
+			else
+			{
+				_grid[side, coord].Collapsed = _gateTileId;
+				_grid[side, coord].Orientation = side == _size - 1 ? 180 : 0;
+			}
+
 		}
 	}
 
