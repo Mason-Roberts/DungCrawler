@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddt7aj1q2srst"]
 
 [ext_resource type="MeshLibrary" uid="uid://bl57esxrkgv7b" path="res://assets/libraries/tileset_dungeon_library.tres" id="1_4t1dp"]
-[ext_resource type="Script" uid="uid://dh128x6moqlma" path="res://Scenes/Test/TestDungeon.cs" id="1_p855g"]
 [ext_resource type="PackedScene" uid="uid://br7hpys7tp4lg" path="res://Scenes/Player/Player.tscn" id="2_kyhjk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1bo0"]
@@ -25,7 +24,6 @@ ambient_light_energy = 16.0
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e1bo0"]
 
 [node name="TestDungeon" type="Node3D" unique_id=322653469]
-script = ExtResource("1_p855g")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=351315609]
 mesh_library = ExtResource("1_4t1dp")

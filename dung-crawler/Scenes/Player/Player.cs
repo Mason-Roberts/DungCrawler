@@ -8,16 +8,16 @@ public partial class Player : CharacterBody3D
 	[Export]
 	public float CamSensitivity = 0.002f;
 
-	[Signal]
-	public delegate void ExpansionEventHandler();
-
-	[Signal]
-	public delegate void MoveEventHandler();
-
 	private Node3D _head;
 	private Camera3D _cam;
 	private AnimatedSprite2D _hand;
 	private bool _lock = false;
+	private PulseExpansion _currentExpansion;
+
+	private void ExpansionComplete()
+	{
+		_currentExpansion = null;
+	}
 
 	public override void _Ready() {
 		_head = GetNode<Node3D>("Head");
@@ -35,7 +35,7 @@ public partial class Player : CharacterBody3D
 			Vector3 camRot = _cam.Rotation;
 			camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
 			_cam.Rotation = camRot;
-		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left) {
+		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null) {
 			_hand.Play();
 		}
 	}
@@ -44,10 +44,21 @@ public partial class Player : CharacterBody3D
 	{
 		if (_hand.Frame == 4)
 		{
-			if (!_lock)
+			if (!_lock && _currentExpansion == null)
 			{
 				_lock = true;
-				EmitSignal("Expansion");
+
+				_currentExpansion = GD.Load<PackedScene>("res://Scenes/PulseExpansion/PulseExpansion.tscn").Instantiate<PulseExpansion>();
+				_currentExpansion.MaxScale = 30;
+				_currentExpansion.ExpansionSpeed = 10f;
+				_currentExpansion.FadeDuration = 1;
+				_currentExpansion.OnComplete += () => ExpansionComplete();
+
+				this.AddChild(_currentExpansion);
+				Vector3 playerPos = this.Position;
+
+				playerPos.Z -= 0.5f;
+				_currentExpansion.GlobalPosition = playerPos;
 			}
 		}
 		else
@@ -78,7 +89,17 @@ public partial class Player : CharacterBody3D
 			velocity.X = direction.X * Speed;
 			velocity.Z = direction.Z * Speed;
 
-			EmitSignal("Move");
+			try
+			{
+				if (_currentExpansion != null && _currentExpansion.direction == 1)
+				{
+					_currentExpansion.GlobalPosition = this.GlobalPosition;
+				}	
+			}
+			catch (Exception e)
+			{
+				GD.PrintErr(e);
+			}
 		}
 		else
 		{

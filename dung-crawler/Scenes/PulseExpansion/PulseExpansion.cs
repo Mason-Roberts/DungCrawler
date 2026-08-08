@@ -16,6 +16,9 @@ public partial class PulseExpansion : Area3D
 	[Export]
 	public double FadeDuration { get; set; }
 
+	[Signal]
+	public delegate void OnCompleteEventHandler();
+
 	private MeshInstance3D _meshInstance { get; set; }
 	private ShaderMaterial _shader { get; set; }
 
@@ -68,6 +71,8 @@ public partial class PulseExpansion : Area3D
 			tween.TweenProperty(_shader, "shader_parameter/sphere_opacity", 0.0, FadeDuration);
 			tween.Parallel().TweenProperty(_shader, "shader_parameter/shine_color", new Color(0.0f, 1.0f, 1.0f, 1.0f), FadeDuration);
 			tween.TweenCallback(Callable.From(QueueFree));
+
+			EmitSignal("OnComplete");
 			SetProcess(false);
 		}
 	}
