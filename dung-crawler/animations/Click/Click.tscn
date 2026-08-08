@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://vxxnsyroqv51" path="res://animations/Click/2.png" id="2_31nli"]
 [ext_resource type="Texture2D" uid="uid://dnqiyjsvyuwun" path="res://animations/Click/3.png" id="3_jj86w"]
 [ext_resource type="Texture2D" uid="uid://dia1ftywogoyy" path="res://animations/Click/4.png" id="4_11wka"]
+[ext_resource type="Script" uid="uid://cmya6svafwtnm" path="res://animations/Click/Click.cs" id="5_ongcg"]
+[ext_resource type="AudioStream" uid="uid://hb0q7qvc1ofu" path="res://animations/Click/Click.wav" id="6_a6p6q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwg83"]
 animations = [{
@@ -41,3 +43,7 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_gwg83")
 frame = 7
 frame_progress = 1.0
+script = ExtResource("5_ongcg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=368748923]
+stream = ExtResource("6_a6p6q")
