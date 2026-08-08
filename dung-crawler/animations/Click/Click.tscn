@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://brj7mw3boba88"]
+
+[ext_resource type="Texture2D" uid="uid://dqbvfis1hikqn" path="res://animations/Click/1.png" id="1_yfi0n"]
+[ext_resource type="Texture2D" uid="uid://vxxnsyroqv51" path="res://animations/Click/2.png" id="2_31nli"]
+[ext_resource type="Texture2D" uid="uid://dnqiyjsvyuwun" path="res://animations/Click/3.png" id="3_jj86w"]
+[ext_resource type="Texture2D" uid="uid://dia1ftywogoyy" path="res://animations/Click/4.png" id="4_11wka"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwg83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yfi0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_31nli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jj86w")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_11wka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_31nli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yfi0n")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=255950353]
+sprite_frames = SubResource("SpriteFrames_gwg83")
+frame = 7
+frame_progress = 1.0

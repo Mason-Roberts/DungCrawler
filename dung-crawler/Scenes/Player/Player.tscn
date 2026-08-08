@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://br7hpys7tp4lg"]
+
+[ext_resource type="Script" uid="uid://umtu5vgqpxea" path="res://Scenes/Player/Player.cs" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://brj7mw3boba88" path="res://animations/Click/Click.tscn" id="2_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwg83"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gwg83"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1919564142]
+script = ExtResource("1_4flbx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147615353]
+shape = SubResource("CapsuleShape3D_gwg83")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1165737300]
+mesh = SubResource("CapsuleMesh_gwg83")
+
+[node name="Head" type="Node3D" parent="." unique_id=982013221]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1832944550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62496513, -0.40439475)
+
+[node name="AnimatedSprite2D" parent="." unique_id=255950353 instance=ExtResource("2_onrkg")]
+position = Vector2(952, 480)
+scale = Vector2(0.25, 0.25)
