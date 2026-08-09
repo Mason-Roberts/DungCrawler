@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://umtu5vgqpxea" path="res://Scenes/Player/Player.cs" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://brj7mw3boba88" path="res://animations/Click/Click.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://dbaa551m5ao0g" path="res://animations/Candle/Candle.tscn" id="3_h54ih"]
+[ext_resource type="PackedScene" uid="uid://drk1xyq4n4rcr" path="res://assets/audio/breathing/Breathing.tscn" id="4_ude3g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwg83"]
 
@@ -34,3 +36,9 @@ omni_attenuation = 0.5
 [node name="AnimatedSprite2D" parent="." unique_id=255950353 instance=ExtResource("2_onrkg")]
 position = Vector2(952, 480)
 scale = Vector2(0.25, 0.25)
+
+[node name="Candle" parent="." unique_id=1857566923 instance=ExtResource("3_h54ih")]
+position = Vector2(280, 500)
+scale = Vector2(0.25, 0.25)
+
+[node name="Breathing" parent="." unique_id=1995721341 instance=ExtResource("4_ude3g")]
