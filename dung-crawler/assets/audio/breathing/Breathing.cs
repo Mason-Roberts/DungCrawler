@@ -68,7 +68,6 @@ public partial class Breathing : Node
 
 		if (_elapsedTime >= _ttBreath && !_currentPlayer.Playing)
 		{
-			GD.Print("breath");
 			_elapsedTime = 0;
 			_ttBreath = GetBreathInterval();
 
