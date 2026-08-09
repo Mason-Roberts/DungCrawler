@@ -21,4 +21,4 @@ volume_db = 10.0
 [node name="FranticBreathing" type="AudioStreamPlayer2D" parent="." unique_id=1967446427]
 position = Vector2(328, 176)
 stream = ExtResource("4_pak6i")
-volume_db = 10.0
+volume_db = 3.5

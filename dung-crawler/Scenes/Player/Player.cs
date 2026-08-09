@@ -47,7 +47,7 @@ public partial class Player : CharacterBody3D
 			Vector3 camRot = _cam.Rotation;
 			camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
 			_cam.Rotation = camRot;
-		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null) {
+		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null && _candle.GetIndex() < 4) {
 			_hand.Play();
 		}
 	}
@@ -67,7 +67,7 @@ public partial class Player : CharacterBody3D
 
 			if (_candle.GetIndex() > 3)
 			{
-				_candleLight.OmniRange = 0;
+				_candleLight.Hide();
 			}
 		}
 
