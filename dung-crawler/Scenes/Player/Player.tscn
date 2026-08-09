@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cy3nib3agkmho" path="res://Scenes/UI/ExpandDomain.tscn" id="3_h54ih"]
 [ext_resource type="Script" uid="uid://m2jlrfmu7lm" path="res://Scenes/Player/DomainExpansionUi.cs" id="3_ude3g"]
 [ext_resource type="PackedScene" uid="uid://drk1xyq4n4rcr" path="res://assets/audio/breathing/Breathing.tscn" id="4_ude3g"]
-[ext_resource type="Script" path="res://Scenes/UI/ExpandDomain.cs" id="5_t26db"]
 [ext_resource type="PackedScene" uid="uid://dbaa551m5ao0g" path="res://animations/Candle/Candle.tscn" id="6_fk5o5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwg83"]
@@ -44,7 +43,6 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("3_ude3g")
 
 [node name="ExpandDomain" parent="DomainExpansionUI" unique_id=1374658180 instance=ExtResource("3_h54ih")]
-script = ExtResource("5_t26db")
 
 [node name="Candle" parent="." unique_id=1857566923 instance=ExtResource("6_fk5o5")]
 position = Vector2(280, 500)
