@@ -1,0 +1,78 @@
+{
+	"tiles": {
+		"-1": {
+			"gridMapIndex": -1,
+			"weight": -1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["PosX", "PosZ", "NegX", "NegZ"]           
+		},
+		"0": {
+			"gridMapIndex": 0,
+			"weight": 0,
+			"allowedRotations": [0],
+			"sockets": ["E", "E", "E", "E"]
+		},
+		"1": {
+			"gridMapIndex": 1,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "E", "W", "E"]
+		},
+		"2": {
+			"gridMapIndex": 2,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "E", "W", "W"]
+		},
+		"3": {
+			"gridMapIndex": 3,
+			"weight": 1,
+			"allowedRotations": [0, 90],
+			"sockets": ["E", "W", "E", "W"]
+		},
+		"4": {
+			"gridMapIndex": 4,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "W", "W", "W"]
+		},
+		"5": {
+			"gridMapIndex": 5,
+			"weight": 1,
+			"allowedRotations": [0],
+			"sockets": ["W", "W", "W", "W"]
+		},     
+		"6": {
+			"gridMapIndex": 6,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "E", "D", "E"]
+		},
+		"7": {
+			"gridMapIndex": 7,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["E", "E", "G", "E"]
+		},
+		"8": {
+			"gridMapIndex": 8,
+			"weight": 1,
+			"allowedRotations": [0, 90, 180, 270],
+			"sockets": ["T", "T", "W", "W"]
+		},
+		"9": {
+			"gridMapIndex": 9,
+			"weight": 1,
+			"allowedRotations": [0, 90],
+			"sockets": ["T", "W", "T", "W"]
+		}
+	},
+	"allowedSockets": {
+		"E": ["E", "W"],
+		"W": ["W", "E", "B"],
+		"D": ["T", "D"],
+		"T": ["T", "D"],
+		"G": ["B"],
+		"B": ["W", "G"]
+	}
+}
