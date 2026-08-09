@@ -305,6 +305,28 @@ public class WfcGenerator
 
 		bool changed = false;
 
+		bool isCellBorderCorner = IsBorderCorner(x, z);
+		bool isCellBorderStraight = IsBorderStraight(x, z);
+
+		bool isNCellBorderCorner = IsBorderCorner(nx, nz);
+		bool isNCellBorderStraight = IsBorderStraight(nx, nz);
+
+		if (isCellBorderCorner)
+		{
+			
+		}
+
+		if (isCellBorderStraight)
+		{
+			
+		}
+		
+		foreach (var index in cell.AvailableTiles)
+		{
+			var tile = _constraints.Tiles[index.ToString()];
+			tile.Sockets
+		}
+
 		cell.
 
 		return changed;
