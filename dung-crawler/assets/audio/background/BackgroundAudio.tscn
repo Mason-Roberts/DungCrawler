@@ -9,5 +9,5 @@ script = ExtResource("1_jsj8a")
 [node name="Main" type="AudioStreamPlayer2D" parent="." unique_id=1000338687]
 position = Vector2(520, 24)
 stream = ExtResource("2_861pw")
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
