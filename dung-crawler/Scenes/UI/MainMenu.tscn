@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bb6t3t4my0gj2"]
+
+[ext_resource type="Texture2D" uid="uid://bpl7eetaij76k" path="res://assets/ui/start_button.png" id="1_g18y6"]
+[ext_resource type="Texture2D" uid="uid://d4ggnwqix7xxn" path="res://assets/ui/menu_bg.png" id="1_t6w0q"]
+[ext_resource type="Texture2D" uid="uid://dk52ym40xk7hj" path="res://assets/ui/start_button_clicked.png" id="2_72sra"]
+[ext_resource type="Texture2D" uid="uid://xoakmddvt3hi" path="res://assets/ui/start_button_active.png" id="2_mjmdf"]
+[ext_resource type="Script" uid="uid://414gidaoufwq" path="res://Scenes/UI/StartButton.cs" id="5_k8um8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhuc8"]
+texture = ExtResource("1_t6w0q")
+
+[sub_resource type="FontFile" id="FontFile_2u2rq"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vujog"]
+texture = ExtResource("1_g18y6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjmdf"]
+texture = ExtResource("2_72sra")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muky0"]
+texture = ExtResource("2_mjmdf")
+
+[node name="MainMenu" type="Control" unique_id=485283083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=81303616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xhuc8")
+
+[node name="StartButton" type="Button" parent="." unique_id=1248440592]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.2958
+offset_top = -215.0
+offset_right = 177.29578
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontFile_2u2rq")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_vujog")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mjmdf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_muky0")
+script = ExtResource("5_k8um8")
+
+[connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
