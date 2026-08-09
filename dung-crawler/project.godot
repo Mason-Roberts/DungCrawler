@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="DungCrawler"
-run/main_scene="res://Scenes/Dungeon/Dungeon.tscn"
+run/main_scene="uid://bb6t3t4my0gj2"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="uid://c4bdj24dslddn"
+config/icon="uid://cbrae1ha8q33g"
 
 [display]
 
