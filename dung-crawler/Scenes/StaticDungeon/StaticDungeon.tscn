@@ -8,7 +8,9 @@
 [sub_resource type="Environment" id="Environment_khfq4"]
 background_mode = 1
 background_color = Color(0.04898069, 0.048980728, 0.04898072, 1)
-fog_enabled = true
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 1
 fog_light_color = Color(0.12616688, 0.14166576, 0.1664648, 1)
 fog_light_energy = 0.69
 fog_sky_affect = 0.481
@@ -16,6 +18,7 @@ fog_sky_affect = 0.481
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q780v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q780v"]
+
 
 [node name="StaticDungeon" type="Node3D" unique_id=1147047575]
 
