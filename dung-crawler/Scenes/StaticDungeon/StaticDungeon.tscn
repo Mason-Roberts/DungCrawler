@@ -3,6 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cw54bc4e1bxtm" path="res://assets/libraries/tileset_dungeon_full_final.tres" id="1_i6tdv"]
 [ext_resource type="PackedScene" uid="uid://br7hpys7tp4lg" path="res://Scenes/Player/Player.tscn" id="2_3avaj"]
 [ext_resource type="PackedScene" uid="uid://bm8cgowkfxjv0" path="res://assets/audio/background/BackgroundAudio.tscn" id="3_ttw10"]
+[ext_resource type="Script" uid="uid://coprxfp2tmkn5" path="res://Scenes/StaticDungeon/Exit.cs" id="4_v8xru"]
 
 [sub_resource type="Environment" id="Environment_khfq4"]
 background_mode = 1
@@ -14,6 +15,8 @@ fog_sky_affect = 0.481
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q780v"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q780v"]
+
 [node name="StaticDungeon" type="Node3D" unique_id=1147047575]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1831830561]
@@ -23,10 +26,20 @@ data = {
 }
 
 [node name="Player" parent="." unique_id=1919564142 instance=ExtResource("2_3avaj")]
-transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, -1.3757627, 0.9374636, 6.9093375)
+transform = Transform3D(-0.018668782, 0, 0.74976766, 0, 0.75, 0, -0.74976766, 0, -0.018668782, -0.9512296, 0.71273243, 7.0618362)
 
 [node name="BackgroundAudio" parent="." unique_id=1581325155 instance=ExtResource("3_ttw10")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=212463224]
 environment = SubResource("Environment_khfq4")
 camera_attributes = SubResource("CameraAttributesPractical_q780v")
+
+[node name="Exit" type="Area3D" parent="." unique_id=1669881081]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 19.030794, 0.9068006, 53.886383)
+script = ExtResource("4_v8xru")
+
+[node name="ExitCollision" type="CollisionShape3D" parent="Exit" unique_id=1163312446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.51501465)
+shape = SubResource("BoxShape3D_q780v")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="OnBodyEntered"]
