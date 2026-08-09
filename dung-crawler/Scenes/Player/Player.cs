@@ -55,10 +55,7 @@ public partial class Player : CharacterBody3D
 				_currentExpansion.OnComplete += () => ExpansionComplete();
 
 				this.AddChild(_currentExpansion);
-				Vector3 playerPos = this.Position;
-
-				playerPos.Z -= 0.5f;
-				_currentExpansion.GlobalPosition = playerPos;
+				_currentExpansion.GlobalPosition = this.GlobalPosition;
 			}
 		}
 		else
