@@ -3,16 +3,25 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public const float Speed = 5.0f;
+	public const float Speed = 2.5f;
 	public const float JumpVelocity = 4.5f;
+
 	[Export]
 	public float CamSensitivity = 0.002f;
+
+	[Export]
+	public double StageLengthSeconds = 150;
 
 	private Node3D _head;
 	private Camera3D _cam;
 	private AnimatedSprite2D _hand;
 	private bool _lock = false;
 	private PulseExpansion _currentExpansion;
+	private Candle _candle;
+	private OmniLight3D _candleLight;
+	private Breathing _breathing;
+
+	private double _elapsedTime = 0;
 
 	private void ExpansionComplete()
 	{
@@ -23,6 +32,9 @@ public partial class Player : CharacterBody3D
 		_head = GetNode<Node3D>("Head");
 		_cam = GetNode<Camera3D>("Head/Camera3D");
 		_hand = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_candle = GetNode<Candle>("Candle");
+		_candleLight = GetNode<OmniLight3D>("Head/OmniLight3D");
+		_breathing = GetNode<Breathing>("Breathing");
 
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
@@ -35,14 +47,31 @@ public partial class Player : CharacterBody3D
 			Vector3 camRot = _cam.Rotation;
 			camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
 			_cam.Rotation = camRot;
-		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null) {
+		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null && _candle.GetIndex() < 4) {
 			_hand.Play();
 		}
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (_hand.Frame == 4)
+		_elapsedTime += delta;
+
+		if (_elapsedTime > StageLengthSeconds)
+		{
+			_elapsedTime = 0;
+
+			_candle.NextCandle();
+			_candleLight.OmniRange -= 0.20f;
+
+			_breathing.IncreaseDistress();
+
+			if (_candle.GetIndex() > 3)
+			{
+				_candleLight.Hide();
+			}
+		}
+
+		if (_hand.Frame == 4 && _candle.GetIndex() < 4)
 		{
 			if (!_lock && _currentExpansion == null)
 			{
@@ -72,10 +101,10 @@ public partial class Player : CharacterBody3D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+		// if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		// {
+		// 	velocity.Y = JumpVelocity;
+		// }
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
