@@ -250,53 +250,82 @@ public class WfcGenerator
 		return candidates;
 	}
 
-	// private void Propagate()
-	// {
-	// 	Queue<int[]> queue = new Queue<int[]>();
-
-	// 	// Add all cells to queue initially
-	// 	for (int x = 0; x < _size; x++)
-	// 	{
-	// 		for (int z = 0; z < _size; z++)
-	// 		{
-	// 			if (!_grid[x, z].Collapsed.HasValue)
-	// 			{
-	// 				queue.Enqueue(new int[] { x, z });
-	// 			}
-	// 		}
-	// 	}
-
-	// 	int[] dx = new int[] { 1, -1, 0, 0 };
-	// 	int[] dz = new int[] { 0, 0, 1, -1 };
-
-	// 	while (queue.Count > 0)
-	// 	{
-	// 		int[] cell = queue.Dequeue();
-	// 		int x = cell[0];
-	// 		int z = cell[1];
-
-	// 		for (int d = 0; d < 4; d++)
-	// 		{
-	// 			int nx = x + dx[d];
-	// 			int nz = z + dz[d];
-
-	// 			if (nx < 0 || nx >= _size || nz < 0 || nz >= _size) continue;
-	// 			if (_grid[x, z].Collapsed.HasValue) continue;
-
-	// 			bool changed = ApplyConstraints(x, z, d, nx, nz, queue);
-	// 			if (changed)
-	// 			{
-	// 				// Also constrain the reverse direction
-	// 				int reverseDir = (d + 2) % 4;
-	// 				ApplyConstraints(nx, nz, reverseDir, x, z, queue);
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-	private void ApplyConstrants()
+	private void Propagate()
 	{
-		
+		Queue<int[]> queue = new Queue<int[]>();
+
+		// Add all cells to queue initially
+		for (int x = 0; x < _size; x++)
+		{
+			for (int z = 0; z < _size; z++)
+			{
+				if (!_grid[x, z].Collapsed.HasValue)
+				{
+					queue.Enqueue(new int[] { x, z });
+				}
+			}
+		}
+
+		// neighbor coord adjusts
+		int[] dx = new int[] { 1, -1, 0, 0 };
+		int[] dz = new int[] { 0, 0, 1, -1 };
+
+		while (queue.Count > 0)
+		{
+			int[] cell = queue.Dequeue();
+			int x = cell[0];
+			int z = cell[1];
+
+			for (int d = 0; d < 4; d++)
+			{
+				int nx = x + dx[d];
+				int nz = z + dz[d];
+
+				// Check border and potentially fuck off
+				if (nx < 0 || nx >= _size || nz < 0 || nz >= _size) continue;
+
+				// Check collapsed and fuck off
+				if (_grid[x, z].Collapsed.HasValue) continue;
+
+				bool changed = ApplyConstraints(x, z, d, nx, nz, queue);
+				if (changed)
+				{
+					// Also constrain the reverse direction
+					int reverseDir = (d + 2) % 4;
+					ApplyConstraints(nx, nz, reverseDir, x, z, queue);
+				}
+			}
+		}
+	}
+
+	private bool ApplyConstraints(int x, int z, int d, int nx, int nz, Queue<int[]> queue)
+	{
+		DungeonCell cell = _grid[x, z];
+		DungeonCell neighborCell = _grid[nx, nz];
+
+		bool changed = false;
+
+		cell.
+
+		return changed;
+	}
+
+	private bool IsBorderCorner(int x, int z)
+	{
+		if ((z == 0 && x == 0) || (z == _size -1 && x == _size - 1) || (z == 0 && x == _size -1) || (z == _size -1 && x == 0))
+		{				
+			return true;
+		}
+		return false;
+	}
+
+	private bool IsBorderStraight(int x, int z)
+	{
+		if ((z == 0 || z == _size -1 || x == 0 || x == _size - 1) && !IsBorderCorner(x, z)) // Border straights need to have a wall
+		{
+			return true;
+		}
+		return false;
 	}
 
 }
