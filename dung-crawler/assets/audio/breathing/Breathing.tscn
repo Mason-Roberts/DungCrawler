@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drk1xyq4n4rcr"]
+
+[ext_resource type="Script" uid="uid://xvbex561b7m7" path="res://assets/audio/breathing/Breathing.cs" id="1_cyo6b"]
+[ext_resource type="AudioStream" uid="uid://bbaxp47eijgl6" path="res://assets/audio/breathing/breathing_01.wav" id="2_yhis6"]
+[ext_resource type="AudioStream" uid="uid://c8vhes7vvdd5a" path="res://assets/audio/breathing/breathing_02.wav" id="3_juro7"]
+[ext_resource type="AudioStream" uid="uid://b865t4dwfq143" path="res://assets/audio/breathing/breathing_03.wav" id="4_pak6i"]
+
+[node name="Breathing" type="Node" unique_id=1995721341]
+script = ExtResource("1_cyo6b")
+
+[node name="CalmBreathing" type="AudioStreamPlayer2D" parent="." unique_id=1883458945]
+position = Vector2(328, 176)
+stream = ExtResource("2_yhis6")
+volume_db = 10.0
+
+[node name="LessCalmBreathing" type="AudioStreamPlayer2D" parent="." unique_id=2068425091]
+position = Vector2(328, 176)
+stream = ExtResource("3_juro7")
+volume_db = 10.0
+
+[node name="FranticBreathing" type="AudioStreamPlayer2D" parent="." unique_id=1967446427]
+position = Vector2(328, 176)
+stream = ExtResource("4_pak6i")
+volume_db = 3.5
