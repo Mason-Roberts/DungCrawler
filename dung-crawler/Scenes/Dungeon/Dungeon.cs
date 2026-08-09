@@ -90,8 +90,7 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles,
-						Collapsed = 0
+						AvailableTiles = tiles
 					};
 					_grid[x,z] = cell;
 				}
@@ -101,8 +100,7 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles,
-						Collapsed = 0
+						AvailableTiles = tiles
 					};
 					_grid[x,z] = cell;
 				}
@@ -112,8 +110,7 @@ public class WfcGenerator
 					var cell = new DungeonCell()
 					{
 						Orientation = 0,
-						AvailableTiles = tiles,
-						Collapsed = 0
+						AvailableTiles = tiles
 					};
 					_grid[x,z] = cell;
 				}
