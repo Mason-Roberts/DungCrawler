@@ -23,7 +23,7 @@ data = {
 }
 
 [node name="Player" parent="." unique_id=1919564142 instance=ExtResource("2_3avaj")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.3757627, 0.9374636, 6.9093375)
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, -1.3757627, 0.9374636, 6.9093375)
 
 [node name="BackgroundAudio" parent="." unique_id=1581325155 instance=ExtResource("3_ttw10")]
 
