@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bm8cgowkfxjv0"]
+
+[ext_resource type="Script" uid="uid://b43116fupyw7t" path="res://assets/audio/background/BackgroundAudio.cs" id="1_jsj8a"]
+[ext_resource type="AudioStream" uid="uid://boo5hyg2ok435" path="res://assets/audio/background/main.wav" id="2_861pw"]
+
+[node name="BackgroundAudio" type="Node2D" unique_id=1581325155]
+script = ExtResource("1_jsj8a")
+
+[node name="Main" type="AudioStreamPlayer2D" parent="." unique_id=1000338687]
+position = Vector2(520, 24)
+stream = ExtResource("2_861pw")
+volume_db = -10.0
+autoplay = true
