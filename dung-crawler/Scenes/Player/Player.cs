@@ -39,15 +39,19 @@ public partial class Player : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
-	public override void _Input(InputEvent @event) {
-		if (@event is InputEventMouseMotion m) {
+	public override void _Input(InputEvent @event) 
+	{
+		if (@event is InputEventMouseMotion m) 
+		{
 			_head.RotateY(-m.Relative.X * CamSensitivity);
 			_cam.RotateX(-m.Relative.Y * CamSensitivity);
 
 			Vector3 camRot = _cam.Rotation;
 			camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
 			_cam.Rotation = camRot;
-		} else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null && _candle.GetIndex() < 4) {
+		} 
+		else if (@event is InputEventMouseButton i && i.ButtonIndex == MouseButton.Left && _currentExpansion == null && _candle.GetIndex() < 4) 
+		{
 			_hand.Play();
 		}
 	}
@@ -100,11 +104,14 @@ public partial class Player : CharacterBody3D
 			velocity += GetGravity() * (float)delta;
 		}
 
-		// Handle Jump.
-		// if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		// {
-		// 	velocity.Y = JumpVelocity;
-		// }
+		if (Input.IsActionPressed("mouse_release"))
+		{
+			Input.MouseMode = Input.MouseModeEnum.Visible;
+		}
+		else if (Input.IsMouseButtonPressed(MouseButton.Left))
+		{
+			Input.MouseMode = Input.MouseModeEnum.Captured;
+		}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
